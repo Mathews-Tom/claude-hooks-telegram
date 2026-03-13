@@ -1,8 +1,63 @@
-.DS_Store
+# Python
 __pycache__/
-*.pyc
-.env
+*.py[cod]
+*.egg-info/
+dist/
+build/
+.eggs/
 *.lock
 *.tmp
-*.egg-info/
+
+# Virtual environments
+.venv/
+venv/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Data (local only)
+data/
+*.db
+
+# Secrets — NEVER commit
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+credentials*.json
+service-account*.json
+secrets*.yaml
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+
+# Ruff
+.ruff_cache/
+
+# Agentic Systems
+.agent
+.claude/
+.gemini
+.opencode/
+.serena/
+
+# Developer workspace (Sage-Dev generated files)
+.docs/
+.sage/
 codemap.html
+
+# macOS
+.DS_Store

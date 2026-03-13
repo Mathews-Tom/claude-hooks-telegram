@@ -206,7 +206,7 @@ def _handle_button(callback: dict) -> None:
 
     elif data.startswith("mute_proj_"):
         project = data[10:]
-        sentinel = SENTINEL_DIR / f"notify-enabled.{project}"
+        sentinel = SENTINEL_DIR / f"hookline-enabled.{project}"
         sentinel.unlink(missing_ok=True)
         _clear_state(project, "mute.json")
         _answer_callback(callback_id, f"🔕 {project} notifications disabled")
@@ -217,6 +217,7 @@ def _handle_button(callback: dict) -> None:
         _clear_thread(project)
         _clear_tasks(project)
         _clear_state(project, "debounce.json")
+        _clear_state(project, "last_buttons.json")
         _answer_callback(callback_id, "📌 Thread reset — next message starts fresh")
         print(f"[hookline-serve] {user} reset thread for {project}")
 

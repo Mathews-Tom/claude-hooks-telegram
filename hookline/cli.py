@@ -170,12 +170,12 @@ def _do_reset(project: str | None) -> None:
             if not project_dir.is_dir():
                 continue
             proj = project_dir.name
-            for fname in ("thread.json", "tasks.json", "debounce.json", "mute.json"):
+            for fname in ("thread.json", "tasks.json", "debounce.json", "mute.json", "last_buttons.json"):
                 _clear_state(proj, fname)
             cleared += 1
         print(f"🧹 reset state for {cleared} project(s)")
     else:
-        for fname in ("thread.json", "tasks.json", "debounce.json", "mute.json"):
+        for fname in ("thread.json", "tasks.json", "debounce.json", "mute.json", "last_buttons.json"):
             _clear_state(resolved, fname)
         print(f"🧹 reset state for '{resolved}'")
 
